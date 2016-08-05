@@ -1,0 +1,71 @@
+[{
+    "id": 1,
+    "first_name": "Clarence",
+    "last_name": "Perkins",
+    "email": "cperkins0@ezinearticles.com",
+    "gender": "Male",
+    "ip_address": "61.91.229.163"
+}, {
+    "id": 2,
+    "first_name": "George",
+    "last_name": "Garrett",
+    "email": "ggarrett1@creativecommons.org",
+    "gender": "Male",
+    "ip_address": "166.146.148.75"
+}, {
+    "id": 3,
+    "first_name": "Maria",
+    "last_name": "Henderson",
+    "email": "mhenderson2@google.ca",
+    "gender": "Female",
+    "ip_address": "234.61.109.46"
+}, {
+    "id": 4,
+    "first_name": "Lois",
+    "last_name": "Sanders",
+    "email": "lsanders3@tripadvisor.com",
+    "gender": "Female",
+    "ip_address": "171.233.87.235"
+}, {
+    "id": 5,
+    "first_name": "Charles",
+    "last_name": "Hicks",
+    "email": "chicks4@geocities.com",
+    "gender": "Male",
+    "ip_address": "36.6.33.141"
+}, {
+    "id": 6,
+    "first_name": "Annie",
+    "last_name": "Stevens",
+    "email": "astevens5@jigsy.com",
+    "gender": "Female",
+    "ip_address": "51.186.186.156"
+}, {
+    "id": 7,
+    "first_name": "Louis",
+    "last_name": "Cox",
+    "email": "lcox6@washington.edu",
+    "gender": "Male",
+    "ip_address": "140.166.122.197"
+}, {
+    "id": 8,
+    "first_name": "Kathy",
+    "last_name": "Chapman",
+    "email": "kchapman7@microsoft.com",
+    "gender": "Female",
+    "ip_address": "69.181.196.184"
+}, {
+    "id": 9,
+    "first_name": "Anne",
+    "last_name": "Miller",
+    "email": "amiller8@ted.com",
+    "gender": "Female",
+    "ip_address": "198.63.186.99"
+}, {
+    "id": 10,
+    "first_name": "David",
+    "last_name": "Russell",
+    "email": "drussell9@umich.edu",
+    "gender": "Male",
+    "ip_address": "187.40.80.149"
+}]

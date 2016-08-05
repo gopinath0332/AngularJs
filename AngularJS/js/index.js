@@ -2,7 +2,10 @@
 // require("bootstrap");
 
 import mymodule from "./module";
+
+const $ = require("jquery");
 const appMoule = angular.module("angularapp", []);
+const PERSON_URL = "/data/person.json";
 
 appMoule.controller("HelloController", ($scope) => {
     $scope.welcomeName = "Angular JS Example!!!";
@@ -20,28 +23,26 @@ appMoule.controller("StudentController", ($scope) => {
 
 
 appMoule.controller("MarkController", ($scope) => {
-    $scope.students = [{
-        "name": "AAA",
-        "maths": 80,
-    }, {
-        "name": "BBB",
-        "maths": 100,
-    }, {
-        "name": "CCC",
-        "maths": 90,
-    }];
+    $scope.students = [];
+    $.ajax({
+        url: PERSON_URL,
+        async: true
+    }).then((list) => {
+        $scope.students = list;
+    }, (error) => {
+        console.error("Error in fetching list:::");
+    });
 
     $scope.templateHolder = {
-        "name": "",
-        "maths": ""
+        "first_name": "",
+        "last_name": ""
     };
 
-
     $scope.updateMark = function() {
-        console.debug(mymodule.getName());
-        $scope.students.push({
-            "name": $scope.templateHolder.name,
-            "maths": $scope.templateHolder.maths
-        });
+        let newObj = {
+            "first_name": $scope.templateHolder.first_name,
+            "last_name": $scope.templateHolder.last_name
+        };
+        $scope.students.push(newObj);
     };
 });
