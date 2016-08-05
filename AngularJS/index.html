@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular Js</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
+</head>
+
+<body ng-app="angularapp">
+    <div ng-controller="HelloController">
+        <h3>Hello there  <span class="small">{{welcomeName}}</span></h3>
+    </div>
+    <hr></hr>
+    <div ng-init="persons=[{'name':'Gopi'},{'name':'AAAA'}]">
+        <ul>
+            <li ng-repeat="person in persons">
+                {{person.name}}
+            </li>
+        </ul>
+    </div>
+    <hr></hr>
+    <div ng-controller="StudentController" ng-init="fname='';lname='';">
+        <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
+        <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
+        <div> {{ getFullname(); }}</div>
+    </div>
+    <hr></hr>
+    <div ng-controller="MarkController">
+        <!-- <div ng-include="'/html/table.htm'"></div> -->
+        <div>
+            <div>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" ng-model="name" placeholder="Student Name....">
+                </div>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" ng-model="maths" placeholder="Maths mark....">
+                </div>
+                <button class="btn btn-success" ng-click=updateMark()>Add</button>
+            </div>
+            <br>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" ng-model="rowFilter" placeholder="Filter...">
+            </div>
+            <table class="table">
+                <thead>
+                    <th>Student</th>
+                    <th>Maths</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="student in students | orderBy:'maths' |filter:rowFilter">
+                        <td>
+                            {{student.name}}
+                        </td>
+                        <td>
+                            {{student.maths}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
+
+</html>
