@@ -42,13 +42,18 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	// const angular = require("angular");
+	var _module = __webpack_require__(1);
+
+	var _module2 = _interopRequireDefault(_module);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var appMoule = angular.module("angularapp", []); // const angular = require("angular");
 	// require("bootstrap");
-	var appMoule = angular.module("angularapp", []);
 
 	appMoule.controller("HelloController", function ($scope) {
 	    $scope.welcomeName = "Angular JS Example!!!";
@@ -75,14 +80,53 @@
 	        "name": "CCC",
 	        "maths": 90
 	    }];
+
+	    $scope.templateHolder = {
+	        "name": "",
+	        "maths": ""
+	    };
+
 	    $scope.updateMark = function () {
-	        console.log("udpate mark");
+	        console.debug(_module2.default.getName());
 	        $scope.students.push({
-	            "name": $scope.name,
-	            "maths": $scope.maths
+	            "name": $scope.templateHolder.name,
+	            "maths": $scope.templateHolder.maths
 	        });
 	    };
 	});
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var MyModule = function () {
+	    function MyModule() {
+	        _classCallCheck(this, MyModule);
+
+	        this.name = "Person name";
+	    }
+
+	    _createClass(MyModule, [{
+	        key: "getName",
+	        value: function getName() {
+	            return this.name;
+	        }
+	    }]);
+
+	    return MyModule;
+	}();
+
+	exports.default = new MyModule();
 
 /***/ }
 /******/ ]);

@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" ng-model="templateHolder.name" placeholder="Student Name....">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" ng-model="templateHolder.maths" placeholder="Maths mark....">
+        </div>
+        <button class="btn btn-success" ng-click=updateMark()>Add</button>
+    </div>
+    <br>
+    <div class="col-xs-2">
+        <input type="text" class="form-control" ng-model="rowFilter" placeholder="Filter...">
+    </div>
+    <table class="table">
+        <thead>
+            <th>Student</th>
+            <th>Maths</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in students | orderBy:'maths' |filter:rowFilter">
+                <td>
+                    {{student.name}}
+                </td>
+                <td>
+                    {{student.maths}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

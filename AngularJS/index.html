@@ -28,39 +28,8 @@
         <div> {{ getFullname(); }}</div>
     </div>
     <hr></hr>
-    <div ng-controller="MarkController">
-        <!-- <div ng-include="'/html/table.htm'"></div> -->
-        <div>
-            <div>
-                <div class="col-xs-3">
-                    <input type="text" class="form-control" ng-model="name" placeholder="Student Name....">
-                </div>
-                <div class="col-xs-3">
-                    <input type="text" class="form-control" ng-model="maths" placeholder="Maths mark....">
-                </div>
-                <button class="btn btn-success" ng-click=updateMark()>Add</button>
-            </div>
-            <br>
-            <div class="col-xs-2">
-                <input type="text" class="form-control" ng-model="rowFilter" placeholder="Filter...">
-            </div>
-            <table class="table">
-                <thead>
-                    <th>Student</th>
-                    <th>Maths</th>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="student in students | orderBy:'maths' |filter:rowFilter">
-                        <td>
-                            {{student.name}}
-                        </td>
-                        <td>
-                            {{student.maths}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div id="markController" ng-controller="MarkController">
+        <div ng-include="'/html/table.template'"></div>
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>

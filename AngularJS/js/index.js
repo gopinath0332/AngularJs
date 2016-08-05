@@ -1,5 +1,7 @@
 // const angular = require("angular");
 // require("bootstrap");
+
+import mymodule from "./module";
 const appMoule = angular.module("angularapp", []);
 
 appMoule.controller("HelloController", ($scope) => {
@@ -28,10 +30,18 @@ appMoule.controller("MarkController", ($scope) => {
         "name": "CCC",
         "maths": 90,
     }];
+
+    $scope.templateHolder = {
+        "name": "",
+        "maths": ""
+    };
+
+
     $scope.updateMark = function() {
+        console.debug(mymodule.getName());
         $scope.students.push({
-            "name": $scope.name,
-            "maths": $scope.maths
+            "name": $scope.templateHolder.name,
+            "maths": $scope.templateHolder.maths
         });
     };
 });

@@ -3,6 +3,8 @@ class MyModule {
         this.name = "Person name";
     }
     getName() {
-
+        return this.name;
     }
 }
+
+export default new MyModule();
