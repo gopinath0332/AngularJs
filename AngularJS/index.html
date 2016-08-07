@@ -28,7 +28,7 @@
         <div> {{ getFullname(); }}</div>
     </div>
     <hr></hr>
-    <div id="markController" ng-controller="MarkController">
+    <div id="markController" ng-controller="MarkController" ng-init="students=[]">
         <div ng-include="'/html/table.template'"></div>
     </div>
     <script type="text/javascript" src="app.js"></script>

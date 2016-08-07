@@ -22,15 +22,9 @@ appMoule.controller("StudentController", ($scope) => {
 });
 
 
-appMoule.controller("MarkController", ($scope) => {
-    $scope.students = [];
-    $.ajax({
-        url: PERSON_URL,
-        async: true
-    }).then((list) => {
+appMoule.controller("MarkController", ($scope, $http) => {
+    $http.get(PERSON_URL).success((list) => {
         $scope.students = list;
-    }, (error) => {
-        console.error("Error in fetching list:::");
     });
 
     $scope.templateHolder = {
