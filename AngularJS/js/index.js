@@ -3,9 +3,26 @@
 
 
 // const $ = require("jquery");
-const appMoule = angular.module("angularapp", []);
+const appMoule = angular.module("angularapp", ["ngRoute"]);
 const PERSON_URL = "/data/person.json";
 
+
+appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
+    $routeProvider.when("/view1/:viewId", {
+        templateUrl: "../html/view.template",
+        controller: "View1",
+        controllerAs: "view"
+    });
+    $routeProvider.when("/view2/:viewId", {
+        templateUrl: "../html/view.template",
+        controller: "View2",
+        controllerAs: "view"
+    });
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: true
+    });
+}]);
 appMoule.controller("HelloController", ($scope) => {
     $scope.welcomeName = "Angular JS Example!!!";
 });
@@ -39,3 +56,20 @@ appMoule.controller("MarkController", ($scope, $http) => {
         $scope.students.push(newObj);
     };
 });
+
+
+appMoule.controller("ViewController", ($scope) => {
+    console.debug("view controller:::::");
+});
+
+appMoule.controller("View1", ["$routeParams", function View1($routeParams) {
+    console.debug("view 1 controllers:::", $routeParams);
+    this.name = "View1 controller";
+    this.params = $routeParams;
+}]);
+
+appMoule.controller("View2", ["$routeParams", function View1($routeParams) {
+    console.debug("view 2 controllers:::", $routeParams);
+    this.name = "View2 controller";
+    this.params = $routeParams;
+}]);

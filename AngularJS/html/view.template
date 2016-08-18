@@ -1,0 +1,6 @@
+<div>
+    Controller: {{view.name}}
+    <br /> 
+    View Id: {{view.params.viewId}}
+    <br />
+</div>
