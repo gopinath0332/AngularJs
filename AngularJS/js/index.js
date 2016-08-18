@@ -13,7 +13,7 @@ appMoule.controller("HelloController", ($scope) => {
 appMoule.controller("StudentController", ($scope) => {
     $scope.getFullname = function() {
         if ($scope.fname) {
-            return `Hello ${$scope.fname} ${$scope.lname} !!!`;
+            return `${$scope.fname} ${$scope.lname}`;
         } else {
             return "";
         }

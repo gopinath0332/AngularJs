@@ -23,9 +23,13 @@
     </div>
     <hr></hr>
     <div ng-controller="StudentController" ng-init="fname='';lname='';">
-        <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
-        <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
-        <div> {{ getFullname(); }}</div>
+        <div class="col-xs-3">
+            <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
+        </div>
+        <div> Hello {{ getFullname(); }} !!!</div>
     </div>
     <hr></hr>
     <div id="markController" ng-controller="MarkController" ng-init="students=[]">
