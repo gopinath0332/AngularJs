@@ -1,9 +1,8 @@
 // const angular = require("angular");
 // require("bootstrap");
 
-import mymodule from "./module";
 
-const $ = require("jquery");
+// const $ = require("jquery");
 const appMoule = angular.module("angularapp", []);
 const PERSON_URL = "/data/person.json";
 
