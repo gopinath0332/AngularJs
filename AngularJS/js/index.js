@@ -23,6 +23,27 @@ appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider,
         requireBase: true
     });
 }]);
+
+appMoule.factory("stringFactory", () => {
+    var factory = {};
+    factory.getHello = () => "Hello, I am from Factory";
+    return factory;
+});
+
+appMoule.factory("strFactory", (stringFactory) => {
+    let factory = {};
+    factory.getFullString = () => {
+        return stringFactory.getHello() + " with first factory as dependency injection";
+    };
+    return factory;
+});
+
+appMoule.service("strService", () => {
+    this.getName = () => {
+        return "Name from service";
+    };
+});
+
 appMoule.controller("HelloController", ($scope) => {
     $scope.welcomeName = "Angular JS Example!!!";
 });
@@ -59,7 +80,7 @@ appMoule.controller("MarkController", ($scope, $http) => {
 
 
 appMoule.controller("ViewController", ($scope) => {
-    console.debug("view controller:::::");
+    console.debug("view controller:::::::::");
 });
 
 appMoule.controller("View1", ["$routeParams", function View1($routeParams) {
@@ -73,3 +94,8 @@ appMoule.controller("View2", ["$routeParams", function View1($routeParams) {
     this.name = "View2 controller";
     this.params = $routeParams;
 }]);
+
+appMoule.controller("FactoryController", ($scope, strFactory) => {
+    $scope.str = strFactory.getFullString();
+    // $scope.name = strService.getName();
+});
