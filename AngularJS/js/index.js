@@ -1,10 +1,12 @@
-// const angular = require("angular");
-// require("bootstrap");
+global.jQuery = require('jquery');
+import angular from "angular";
+import ngRoute from "angular-route";
+import $ from "jquery";
 
+import "bootstrap/dist/css/bootstrap.css";
 
-// const $ = require("jquery");
-const appMoule = angular.module("angularapp", ["ngRoute"]);
-const PERSON_URL = "/data/person.json";
+const appMoule = angular.module("angularapp", [ngRoute]);
+appMoule.value("personUrl", "/data/person.json");
 
 
 appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
@@ -24,6 +26,7 @@ appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider,
     });
 }]);
 
+
 appMoule.factory("stringFactory", () => {
     var factory = {};
     factory.getHello = () => "Hello, I am from Factory";
@@ -38,9 +41,10 @@ appMoule.factory("strFactory", (stringFactory) => {
     return factory;
 });
 
-appMoule.service("strService", () => {
-    this.getName = () => {
-        return "Name from service";
+
+appMoule.service("strService", function() {
+    this.getName = function() {
+        return "This is name from Service";
     };
 });
 
@@ -59,8 +63,8 @@ appMoule.controller("StudentController", ($scope) => {
 });
 
 
-appMoule.controller("MarkController", ($scope, $http) => {
-    $http.get(PERSON_URL)
+appMoule.controller("MarkController", ($scope, $http, personUrl) => {
+    $http.get(personUrl)
         .success((list) => {
             $scope.students = list;
         });
@@ -96,8 +100,8 @@ appMoule.controller("View2", ["$routeParams", function View1($routeParams) {
     this.params = $routeParams;
 }]);
 
-appMoule.controller("FactoryController", ($scope, strFactory) => {
-    // console.debug("factory serveice:::");
+appMoule.controller("FactoryController", ($scope, strFactory, strService) => {
     $scope.str = strFactory.getFullString();
-    // $scope.name = strService.getName();
+    $scope.name = strService.getName();
 });
+$('.dropdown-toggle').dropdown();
