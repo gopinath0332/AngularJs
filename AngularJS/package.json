@@ -21,7 +21,7 @@
     "main": "index.js",
     "name": "angularjs",
     "scripts": {
-        "server": "webpack-dev-server --progress --port 9090 --content-base . --inline --hot",
+        "server": "webpack-dev-server",
         "webpack": "webpack"
     },
     "version": "1.0.0"

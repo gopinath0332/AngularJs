@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Angular Js</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-route/angular-route.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
-    <base href="/">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Js</title>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
+        <base href="/">
+    </head>
 
-<body ng-app="angularapp">
-    <div ng-controller="HelloController">
-        <h3>Hello there  <span class="small">{{welcomeName}}</span></h3>
-    </div>
-    <hr></hr>
-    <div ng-init="persons=[{'name':'Gopi'},{'name':'AAAA'}]">
-        <ul>
-            <li ng-repeat="person in persons">
-                {{person.name}}
-            </li>
-        </ul>
-    </div>
-    <hr></hr>
-    <div ng-controller="StudentController" ng-init="fname='';lname='';">
-        <div class="col-xs-3">
-            <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
+    <body ng-app="angularapp">
+        <div ng-controller="HelloController">
+            <h3>Hello there
+                <span class="small">{{welcomeName}}</span>
+            </h3>
         </div>
-        <div class="col-xs-3">
-            <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
+        <hr></hr>
+        <div ng-init="persons=[{'name':'Gopi'},{'name':'AAAA'}]">
+            <ul>
+                <li ng-repeat="person in persons">
+                    {{person.name}}
+                </li>
+            </ul>
         </div>
-        <div> Hello {{ getFullname(); }} !!!</div>
-    </div>
-    <hr></hr>
-    <div id="markController" ng-controller="MarkController" ng-init="students=[]">
-        <div ng-include="'/html/table.template'"></div>
-    </div>
-    <hr/>
-    <div ng-controller="ViewController">
-        <h3>NG-VIEW</h3>
-        <div class="btn-group">
-            <a class="btn btn-default" href="view1/11">View1</a>
-            <a class="btn btn-default" href="view2/12">View2</a>
+        <hr></hr>
+        <div ng-controller="StudentController" ng-init="fname='';lname='';">
+            <div class="col-xs-3">
+                <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
+            </div>
+            <div class="col-xs-3">
+                <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
+            </div>
+            <div>
+                Hello
+                {{ getFullname(); }}
+                !!!</div>
         </div>
-        <div ng-view></div>
-    </div>
-    <hr/>
-    <h3>Factory and Services</h3>
-    <div ng-controller="FactoryController">
-      <div>String from Factory::::{{str}}</div>
-      <div>String from Service::{{name}}</div>
-    </div>
-    <!-- <script type="text/javascript" src="app.js"></script> -->
-    <script src="js/index.js" charset="utf-8"></script>
-</body>
-
-</html>
+        <hr></hr>
+        <div id="markController" ng-controller="MarkController" ng-init="students=[]">
+            <div ng-include="'/html/table.template'"></div>
+        </div>
+        <hr/>
+        <div ng-controller="ViewController">
+            <h3>NG-VIEW</h3>
+            <div class="btn-group">
+                <a class="btn btn-default" href="view1/11">View1</a>
+                <a class="btn btn-default" href="view2/12">View2</a>
+            </div>
+            <div ng-view></div>
+        </div>
+        <hr/>
+        <h3>Factory and Services</h3>
+        <div ng-controller="FactoryController">
+            <div>String from Factory::::{{str}}</div>
+            <div>String from Service::{{name}}</div>
+        </div>
+        <script type="text/javascript" src="app.js"></script>
+        <!-- <script src="js/index.js" charset="utf-8"></script> -->
+    </body>
 
 </html>

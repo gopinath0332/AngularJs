@@ -3,12 +3,12 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 const PATHS = {
-    app: path.join(__dirname, 'js'),
+    app: path.join(__dirname),
     build: path.join(__dirname),
 };
 module.exports = {
     context: PATHS.app,
-    entry: PATHS.app + "/index.js",
+    entry: PATHS.app + "/js/index.js",
     module: {
         loaders: [{
             test: /\.js$/,
@@ -29,8 +29,33 @@ module.exports = {
         path: PATHS.build,
         filename: "app.js"
     },
-    plugins: [new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery"
-    })]
+    devServer: {
+
+        contentBase: path.join(__dirname),
+
+        inline: true,
+
+        hot: true,
+        // Enable history API fallback so HTML5 History API based
+        // routing works. This is a good default that will come
+        // in handy in more complicated setups.
+
+        historyApiFallback: false,
+
+        progress: true,
+
+        // Display only errors to reduce the amount of output.
+        stats: 'errors-only',
+
+        // Parse host and port from env so this is easy to customize.
+        host: process.env.HOST,
+        port: process.env.PORT
+
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ]
 };

@@ -60,9 +60,10 @@ appMoule.controller("StudentController", ($scope) => {
 
 
 appMoule.controller("MarkController", ($scope, $http) => {
-    $http.get(PERSON_URL).success((list) => {
-        $scope.students = list;
-    });
+    $http.get(PERSON_URL)
+        .success((list) => {
+            $scope.students = list;
+        });
 
     $scope.templateHolder = {
         "first_name": "",
@@ -96,6 +97,7 @@ appMoule.controller("View2", ["$routeParams", function View1($routeParams) {
 }]);
 
 appMoule.controller("FactoryController", ($scope, strFactory) => {
+    // console.debug("factory serveice:::");
     $scope.str = strFactory.getFullString();
     // $scope.name = strService.getName();
 });
