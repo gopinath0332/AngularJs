@@ -1,9 +1,10 @@
+import "bootstrap/dist/css/bootstrap.css";
+
 global.jQuery = require('jquery');
 import angular from "angular";
 import ngRoute from "angular-route";
 import $ from "jquery";
-
-import "bootstrap/dist/css/bootstrap.css";
+require("bootstrap");
 
 const appMoule = angular.module("angularapp", [ngRoute]);
 appMoule.value("personUrl", "/data/person.json");

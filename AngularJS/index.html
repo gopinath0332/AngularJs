@@ -4,8 +4,6 @@
     <head>
         <meta charset="utf-8">
         <title>Angular Js</title>
-        <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
         <base href="/">
         <script type="text/javascript" src="app.js"></script>
     </head>
@@ -60,8 +58,8 @@
             <h4>String from Service::::<small>{{name}}</small>
             </h4>
         </div>
-
-        <div class="dropdown">
+        <hr/>
+        <!-- <div class="dropdown">
             <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown trigger
                 <span class="caret"></span>
@@ -71,6 +69,31 @@
                 <li>2</li>
                 <li>3</li>
             </ul>
+        </div> -->
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        Bootstrap with angular and node working
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 
