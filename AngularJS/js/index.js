@@ -9,7 +9,6 @@ require("bootstrap");
 const appMoule = angular.module("angularapp", [ngRoute]);
 appMoule.value("personUrl", "/data/person.json");
 
-
 appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider.when("/view1/:viewId", {
         templateUrl: "../html/view.template",
@@ -27,6 +26,7 @@ appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider,
     });
 }]);
 
+require("./dir1.js")(appMoule);
 
 appMoule.factory("stringFactory", () => {
     var factory = {};
