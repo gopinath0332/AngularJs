@@ -2,6 +2,7 @@ var debug = process.env.NODE_ENV !== "production";
 // var debug = false;
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const PATHS = {
     app: path.join(__dirname),
     build: path.join(__dirname),
@@ -19,7 +20,8 @@ module.exports = {
             }
         }, {
             test: /\.css$/,
-            loader: "style!css"
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+                // loader: "style!css"
         }, {
             test: /\.(woff|woff2|eot|ttf|svg)$/,
             loader: 'url'
@@ -53,6 +55,7 @@ module.exports = {
 
     },
     plugins: [new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextPlugin("[name].css"),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"

@@ -1,28 +1,29 @@
 {
-    "author": "",
-    "description": "",
-    "dependencies": {
-        "angular": "^1.5.8",
-        "angular-route": "^1.5.8",
-        "babel-cli": "^6.11.4",
-        "bootstrap": "^3.3.7",
-        "css-loader": "^0.23.1",
-        "jquery": "^3.1.0",
-        "style-loader": "^0.13.1",
-        "url-loader": "^0.5.7",
-        "webpack": "^1.13.1",
-        "webpack-dev-server": "^1.14.1"
-    },
-    "devDependencies": {
-        "babel-core": "^6.13.1",
-        "babel-loader": "^6.2.4",
-        "babel-preset-es2015": "^6.13.1"
-    },
-    "main": "index.js",
-    "name": "angularjs",
-    "scripts": {
-        "server": "webpack-dev-server",
-        "webpack": "webpack"
-    },
-    "version": "1.0.0"
+  "author": "",
+  "description": "",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "babel-cli": "^6.11.4",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jquery": "^3.1.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.1"
+  },
+  "main": "index.js",
+  "name": "angularjs",
+  "scripts": {
+    "server": "webpack-dev-server",
+    "webpack": "webpack"
+  },
+  "version": "1.0.0"
 }

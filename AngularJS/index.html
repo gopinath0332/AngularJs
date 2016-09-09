@@ -1,66 +1,64 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Angular Js</title>
-        <base href="/">
-        <script type="text/javascript" src="app.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Angular Js</title>
+    <link rel="stylesheet" href="main.css" media="screen" title="no title">
+    <base href="/">
+</head>
 
-    <body ng-app="angularapp">
-        <external-directive></external-directive>
-        <div ng-controller="HelloController">
-            <h3>Hello there
+<body ng-app="angularapp">
+    <div ng-controller="HelloController">
+        <h3>Hello there
                 <span class="small">{{welcomeName}}</span>
             </h3>
+    </div>
+    <hr></hr>
+    <div ng-init="persons=[{'name':'Gopi'},{'name':'AAAA'}]">
+        <ul>
+            <li ng-repeat="person in persons">
+                {{person.name}}
+            </li>
+        </ul>
+    </div>
+    <hr></hr>
+    <div ng-controller="StudentController" ng-init="fname='';lname='';">
+        <div class="col-xs-3">
+            <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
         </div>
-        <hr></hr>
-        <div ng-init="persons=[{'name':'Gopi'},{'name':'AAAA'}]">
-            <ul>
-                <li ng-repeat="person in persons">
-                    {{person.name}}
-                </li>
-            </ul>
+        <div class="col-xs-3">
+            <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
         </div>
-        <hr></hr>
-        <div ng-controller="StudentController" ng-init="fname='';lname='';">
-            <div class="col-xs-3">
-                <input type="text" ng-model="fname" class="form-control" placeholder="Enter First name..">
-            </div>
-            <div class="col-xs-3">
-                <input type="text" ng-model="lname" class="form-control" placeholder="Enter Last name..">
-            </div>
-            <div>
-                Hello
-                {{ getFullname(); }}
-                !!!</div>
+        <div>
+            Hello {{ getFullname(); }} !!!
         </div>
-        <hr></hr>
-        <div id="markController" ng-controller="MarkController" ng-init="students=[]">
-            <div ng-include="'/html/table.template'"></div>
+    </div>
+    <hr></hr>
+    <div id="markController" ng-controller="MarkController" ng-init="students=[]">
+        <div ng-include="'/html/table.template'"></div>
+    </div>
+    <hr/>
+    <div ng-controller="ViewController">
+        <h3>NG-VIEW</h3>
+        <div class="btn-group">
+            <a class="btn btn-default" href="view1/11">View1</a>
+            <a class="btn btn-default" href="view2/12">View2</a>
         </div>
-        <hr/>
-        <div ng-controller="ViewController">
-            <h3>NG-VIEW</h3>
-            <div class="btn-group">
-                <a class="btn btn-default" href="view1/11">View1</a>
-                <a class="btn btn-default" href="view2/12">View2</a>
-            </div>
-            <div ng-view></div>
-        </div>
-        <hr/>
-        <h2>Factory and Services</h2>
-        <div ng-controller="FactoryController">
-            <h4>String from Factory::::
+        <div ng-view></div>
+    </div>
+    <hr/>
+    <h2>Factory and Services</h2>
+    <div ng-controller="FactoryController">
+        <h4>String from Factory::::
                 <small>{{str}}
                 </small>
             </h4>
-            <h4>String from Service::::<small>{{name}}</small>
+        <h4>String from Service::::<small>{{name}}</small>
             </h4>
-        </div>
-        <hr/>
-        <!-- <div class="dropdown">
+    </div>
+    <hr/>
+    <!-- <div class="dropdown">
             <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown trigger
                 <span class="caret"></span>
@@ -72,30 +70,34 @@
             </ul>
         </div> -->
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             Launch demo modal
         </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        Bootstrap with angular and node working
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Bootstrap with angular and node working
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    <external-directive></external-directive>
+
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
 
 </html>

@@ -26,7 +26,7 @@ appMoule.config(["$routeProvider", "$locationProvider", function($routeProvider,
     });
 }]);
 
-require("./dir1.js")(appMoule);
+require("./externalDirective.js")(appMoule);
 
 appMoule.factory("stringFactory", () => {
     var factory = {};
@@ -86,7 +86,7 @@ appMoule.controller("MarkController", ($scope, $http, personUrl) => {
 
 
 appMoule.controller("ViewController", ($scope) => {
-    console.debug("view controller:::::::::");
+    console.debug("view controller:::::");
 });
 
 appMoule.controller("View1", ["$routeParams", function View1($routeParams) {
